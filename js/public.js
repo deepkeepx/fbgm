@@ -79,44 +79,11 @@ $("#footer-app img").click(function(e) {
 		);
 	}
 	if ($(this).data("name") === "tiktok") {
-		showTip("正在跳转应用...");
-		setTimeout(() => {
-			if (
-				/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-					navigator.userAgent
-				)
-			) {
-				const tiktokName = encodeURIComponent("fogdecomaterial");
-				// TikTok官方Scheme (Android/iOS通用)
-				const tiktokUrl = `snssdk1233://user/profile/${tiktokName}`;
-				// 备用Scheme (不同版本可能不同)
-				const tiktokUrls = [
-					`tiktok://user?username=${tiktokName}`,
-					`musically://user?username=${tiktokName}`,
-					`aweme://user/profile/${tiktokName}`,
-				];
-				const tiktokWebUrl = `https://www.tiktok.com/@${tiktokName}`;
-				window.location.href = tiktokUrl;
-				setTimeout(function() {
-					if (!document.hidden) {
-						// 尝试备用Scheme
-						$.each(tiktokUrls, function(index, scheme) {
-							setTimeout(function() {
-								window.location.href = scheme;
-							}, index * 200);
-						});
-						// 最终跳转网页版
-						setTimeout(function() {
-							if (!document.hidden) {
-								window.location.href = tiktokWebUrl;
-							}
-						}, tiktokUrls.length * 200 + 200);
-					}
-				}, 800);
-			} else {
-				window.open(tiktokWebUrl, "_blank");
-			}
-		}, 500);
+		checkApp(
+			"tiktok://user/profile/7373745604185867269",
+			"https://www.tiktok.com/@fbgdecomaterial",
+			"https://www.tiktok.com/@fbgdecomaterial"
+		);
 	}
 });
 
@@ -124,19 +91,19 @@ function checkApp(appScheme, webUrl, storeUrl) {
 	showTip("正在跳转应用...");
 	setTimeout(() => {
 		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-			window.location.href = appScheme;
-			setTimeout(() => {
-				window.addEventListener("visibilitychange", () => {
-					if (document.hidden) {
-						history.back();
-					} else {
-						showTip("未检测到应用，正在跳转下载...");
-						window.location.href = storeUrl;
-					}
-				});
-			}, 500);
+			let iframe = document.createElement("iframe");
+			iframe.style.display = "none";
+			iframe.id = "appScheme";
+			iframe.src = appScheme;
+			document.body.appendChild(iframe);
+			window.addEventListener("visibilitychange", () => {
+				if(document.hidden){
+					let appScheme = document.getElementById("appScheme");
+					appScheme.remove();
+				}
+			});
 		} else {
-			window.open(webUrl, '_blank');
+			window.location.href = webUrl;
 		}
 	}, 500);
 }
