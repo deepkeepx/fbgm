@@ -1,0 +1,168 @@
+
+main section{
+	position: relative;
+	background-color: #fff;
+	padding: 120px 0 150px 0;
+}
+
+main section .bg{
+	position: absolute;
+	left: 0;
+	bottom: 100px;
+	width: 100%;
+	height: 590px;
+	background-color: #ededed;
+}
+
+main .box{
+	position: relative;
+	z-index: 1;
+	margin: 0 auto;
+	width: var(--width);
+	display: flex;
+	justify-content: space-between;
+}
+
+main .box .left{
+	width: 500px;
+}
+
+main .box .left .title{
+	font-family: Poppins-Bold;
+	font-size: 42px;
+	line-height: 50px;
+	color: #313131;
+}
+
+main .box .left .tip{
+	margin-top: 40px;
+	font-size: 16px;
+	color: #313131;
+}
+
+main .box .left .tag{
+	display: inline-flex;
+	margin-top: 70px;
+	font-size: 20px;
+	color: #ffffff;
+	background-color: var(--color);
+	padding: 5px 20px;
+}
+
+	
+main .box .left .tag:nth-child(5){
+	margin-top: 160px;
+}
+
+main .box .left .list{
+	margin-top: 20px;
+	padding-left: 5px;
+}
+
+main .box .left .list .item{
+	position: relative;
+	padding-left: 20px;
+	font-size: 18px;
+	color: #313131;
+}
+
+main .box .left .list .item+.item{
+	margin-top: 5px;
+}
+
+main .box .left .list .item::before{
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 10px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: #c1a080;
+}
+
+main .box .left .info{
+	margin-top: 20px;
+	font-size: 18px;
+	color: #666666;
+}
+
+
+main .box .right{
+	flex: 1;
+	display: grid;
+	grid-template-areas: "a a a"
+						"a a a"
+						"b c d"
+						"b e h"
+						"f g h";
+	gap: 18px;
+}
+
+main .box .right .time img{
+	display: block;
+	width: 100%;
+}
+
+main .box .right .time:nth-child(1){
+	grid-area: a;
+}
+
+main .box .right .time:nth-child(2){
+	grid-area: b;
+}
+
+main .box .right .time:nth-child(3){
+	grid-area: c;
+}
+
+main .box .right .time:nth-child(4){
+	grid-area: d;
+}
+
+main .box .right .time:nth-child(5){
+	grid-area: e;
+}
+
+main .box .right .time:nth-child(6){
+	grid-area: f;
+}
+
+main .box .right .time:nth-child(7){
+	grid-area: g;
+}
+
+main .box .right .time:nth-child(8){
+	grid-area: h;
+}
+
+
+
+@media screen and (max-width: 1199px) {
+	main section{
+		padding: 40px 0 150px 0;
+	}
+	main .box{
+		margin: 0;
+		width: 100%;
+		display: block;
+		padding: 0 var(--padding-side);
+	}
+	main .box .left{
+		width: 100%;
+	}
+	
+	main .box .left .tip{
+		margin-top: 25px;
+	}
+	
+	main .box .left .tag{
+		margin-top: 50px;
+	}
+	main .box .left .tag:nth-child(5){
+		margin-top: 50px;
+	}
+	main .box .right{
+		margin-top: 50px;
+	}
+}

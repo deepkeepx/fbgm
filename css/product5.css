@@ -1,0 +1,121 @@
+
+main section{
+	position: relative;
+	background-color: #fff;
+	padding: 120px 0 400px 0;
+}
+
+main section .bg{
+	position: absolute;
+	left: 0;
+	bottom: 100px;
+	width: 100%;
+	height: 590px;
+	background-color: #ededed;
+}
+
+main .box{
+	position: relative;
+	z-index: 1;
+	margin: 0 auto;
+	width: var(--width);
+	display: flex;
+	justify-content: space-between;
+	padding: 0 40px;
+}
+
+main .box .left{
+	width: 500px;
+}
+
+main .box .left .title{
+	font-family: Poppins-Bold;
+	font-size: 42px;
+	line-height: 50px;
+	color: #313131;
+}
+
+main .box .left .tip{
+	margin-top: 45px;
+	font-size: 16px;
+	color: #313131;
+}
+
+main .box .left .tag{
+	display: inline-flex;
+	margin-top: 80px;
+	font-size: 20px;
+	color: #ffffff;
+	background-color: var(--color);
+	padding: 5px 20px;
+}
+
+main .box .left .list{
+	margin-top: 50px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+	padding-right: 20px;
+}
+
+main .box .left .list img{
+	display: block;	
+	width: 100%;
+}
+
+main .box .left .info{
+	margin-top: 20px;
+	font-size: 18px;
+	color: #666666;
+}
+
+
+main .box .right{
+	flex: 1;
+}
+
+main .box .right img{
+	display: block;
+	width: 100%;
+}
+
+
+
+@media screen and (max-width: 1199px) {
+	main section{
+		padding: 50px 0 200px 0;
+	}
+	main .box{
+		margin: 0;
+		width: 100%;
+		display: block;
+		padding: 0 var(--padding-side);
+	}
+	
+	main .box .left{
+		width: 100%;
+	}
+	
+	main .box .left .title{
+		font-size: 40px;
+	}
+	
+	main .box .left .tip{
+		margin-top: 35px;
+	}
+	
+	main .box .left .tip br{
+		display: none;
+	}
+	
+	main .box .left .list{
+		margin-top: 50px;
+		padding-right: 0px;
+	}
+	
+	main .box .right{
+		margin-top: 50px;
+		width: 100%;
+	}
+	
+}

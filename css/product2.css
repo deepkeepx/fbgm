@@ -1,0 +1,226 @@
+
+main section.floor2{
+	padding: 120px 0 70px 0;
+}
+
+main section.floor2 .box{
+	margin: 0 auto;
+	width: var(--width);
+	display: flex;
+	justify-content: space-between;
+}
+
+main section.floor2 .box .left{
+	width: 500px;
+	padding-top: 20px;
+}
+
+main section.floor2 .box .left .title{
+	font-family: Poppins-Bold;
+	font-size: 42px;
+	line-height: 50px;
+	color: #313131;
+}
+
+main section.floor2 .box .left .tip{
+	margin-top: 35px;
+	font-size: 16px;
+	color: #313131;
+}
+
+main section.floor2 .box .left .tag{
+	display: inline-flex;
+	margin-top: 60px;
+	font-size: 20px;
+	color: #ffffff;
+	background-color: var(--color);
+	padding: 5px 20px;
+}
+
+main section.floor2 .box .left .list{
+	margin-top: 20px;
+	padding-left: 5px;
+}
+
+main section.floor2 .box .left .list .item{
+	position: relative;
+	padding-left: 20px;
+	font-size: 18px;
+	color: #313131;
+}
+
+main section.floor2 .box .left .list .item+.item{
+	margin-top: 5px;
+}
+
+main section.floor2 .box .left .list .item::before{
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 10px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: #c1a080;
+}
+
+main section.floor2 .box .right{
+	flex: 1;
+}
+
+main section.floor2 .box .right .show{
+	width: 100%;
+}
+
+main section.floor2 .box .right .show img{
+	display: block;
+	width: 100%;
+}
+
+main section.floor2 .box .right .action{
+	margin-top: 70px;
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
+	gap: 10px;
+}
+
+main section.floor2 .box .right .action img{
+	display: block;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+
+
+
+
+
+main section.floor3{
+	background-color: #ededed;
+	padding: 60px 0 90px 0;
+}
+
+main section.floor3 .box{
+	margin: 0 auto;
+	width: var(--width);
+}
+
+main section.floor3 .box .show{
+	width: 100%;
+	display: flex;
+}
+
+main section.floor3 .box .show .left{
+	width: 500px;
+}
+
+main section.floor3 .box .show .right{
+	flex: 1;
+}
+
+main section.floor3 .box .show .tag{
+	display: inline-flex;
+	font-size: 20px;
+	color: #ffffff;
+	background-color: var(--color);
+	padding: 5px 20px;
+}
+
+main section.floor3 .box .show .info{
+	margin-top: 25px;
+	font-size: 18px;
+	color: #666666;
+}
+
+main section.floor3 .box .show .info+.info{
+	margin-top: 5px;
+}
+
+main section.floor3 .box .list{
+	margin-top: 80px;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 15px;
+}
+
+main section.floor3 .box .list img{
+	display: block;
+	width: 100%;
+}
+
+
+
+
+
+@media screen and (max-width: 767px) {
+	
+	main section.floor2 .box .right .action{
+		grid-template-columns: repeat(5, 1fr);
+	}
+	
+}
+
+
+@media screen and (max-width: 1199px) {
+	main section.floor2{
+		padding: 30px 0 70px 0;
+	}
+	
+	main section.floor2 .box{
+		margin: 0;
+		width: 100%;
+		display: block;
+		padding: 0 var(--padding-side);
+	}
+	main section.floor2 .box .left{
+		width: 100%;
+	}
+	
+	main section.floor2 .box .left .tip br{
+		display: none;
+	}
+	
+	main section.floor2 .box .right{
+		margin-top: 50px;
+		width: 100%;
+	}
+	
+	main section.floor2 .box .right .action{
+		margin-top: 30px;
+	}
+	
+	main section.floor2 .box .right .action img{
+		width: 100%;
+		height: auto;
+	}
+	
+	
+	main section.floor3{
+		padding: 60px var(--padding-side) 90px var(--padding-side);
+	}
+	
+	main section.floor3 .box{
+		margin: 0;
+		width: 100%;
+	}
+	
+	main section.floor3 .box .show{
+		width: 100%;
+		display: block;
+	}
+	
+	main section.floor3 .box .show .left{
+		width: 100%;
+	}
+	
+	main section.floor3 .box .show .right{
+		margin-top: 40px;
+		width: 100%;
+	}
+	
+	main section.floor3 .box .list{
+		margin-top: 50px;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	
+}

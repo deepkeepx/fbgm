@@ -1,0 +1,162 @@
+main .banner{
+	
+}
+
+main .banner .show{
+	overflow: hidden;
+}
+
+main .banner .show .list{
+	
+}
+
+main .banner .show .list .item{
+	position: relative;
+}
+
+main .banner .show .list .item img{
+	position: relative;
+	z-index: 0;
+	display: block;
+	width: 100%;
+}
+
+main .banner .bar{
+	position: relative;
+	z-index: 1;
+	margin: 0 auto;
+	margin-top: -50px;
+	width: 1352px;
+	border: 1px solid #d8d8d8;
+	background-color: #d8d8d8;
+	overflow: hidden;
+}
+
+main .banner .bar .actions{
+	width: 3240px;
+	display: flex;
+	align-items: center;
+}
+
+main .banner .bar .actions .item{
+	width: 270px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #f5f5f5;
+	font-size: 18px;
+	color: #565656;
+}
+
+main .banner .bar .actions .item+.item{
+	border-left: 1px solid #d8d8d8;
+}
+
+main .banner .bar .actions .item.active{
+	background-color: var(--color);
+	color: #ffffff;
+}
+
+
+
+main .banner .bar .prev,
+main .banner .bar .next{
+	position: absolute;
+	top: 0;
+	width: 25px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+main .banner .bar .prev img,
+main .banner .bar .next img{
+	display: block;
+	width: 10px;
+	height: 10px;
+}
+
+main .banner .bar .prev{
+	left: 0;
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+main .banner .bar .next{
+	right: 0;
+	background: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+main .banner .bar .prev img{
+	transform: rotate(-90deg);
+}
+
+main .banner .bar .next img{
+	transform: rotate(-90deg);
+}
+
+
+
+@media screen and (max-width: 767px) {
+	main .banner .bar{
+		margin-top: -25px;
+		width: calc(100vw - var(--padding-side));
+	}
+	main .banner .bar .actions{
+		width: calc((100vw - var(--padding-side)) / 3 * 12);
+	}
+	
+	main .banner .bar .actions .item{
+		width: calc((100vw - var(--padding-side)) / 3);
+		height: 50px;
+		font-size: 10px;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	main .banner .bar{
+		margin-top: -30px;
+		width: 90vw;
+	}
+	main .banner .bar .actions{
+		width: calc(90vw / 4 * 12);
+	}
+	main .banner .bar .actions .item{
+		width: calc(90vw / 4);
+		height: 60px;
+		font-size: 14px;
+	}
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+	main .banner .bar{
+		margin-top: -35px;
+		width: 90vw;
+	}
+	main .banner .bar .actions{
+		width: calc(90vw / 4 * 12);
+	}
+	main .banner .bar .actions .item{
+		width: calc(90vw / 4);
+		height: 70px;
+		font-size: 16px;
+	}
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+	main .banner .bar{
+		margin-top: -40px;
+		width: 1200px;
+	}
+	main .banner .bar .actions{
+		width: calc(1200px / 5 * 12);
+	}
+	main .banner .bar .actions .item{
+		width: calc(1200px / 4);
+		height: 80px;
+		font-size: 16px;
+	}
+}
