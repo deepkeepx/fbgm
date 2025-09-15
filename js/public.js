@@ -79,11 +79,39 @@ $("#footer-app img").click(function(e) {
 		);
 	}
 	if ($(this).data("name") === "tiktok") {
-		checkApp(
-			"tiktok://user/profile/7373745604185867269",
-			"https://www.tiktok.com/@fbgdecomaterial",
-			"https://www.tiktok.com/@fbgdecomaterial"
-		);
+		showTip("正在跳转应用...");
+		setTimeout(() => {
+			const tiktokWebUrl = `https://www.tiktok.com/@fbgdecomaterial`;
+			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+				// TikTok官方Scheme (Android/iOS通用)
+				const tiktokUrl = `snssdk1233://user/profile/7373745604185867269`;
+				// 备用Scheme (不同版本可能不同)
+				const tiktokUrls = [
+					`tiktok://user/profile/7373745604185867269`,
+					`musically://user?username=7373745604185867269`,
+					`aweme://user/profile/7373745604185867269`,
+				];
+				window.location.href = tiktokUrl;
+				setTimeout(function() {
+					if (!document.hidden) {
+						// 尝试备用Scheme
+						$.each(tiktokUrls, function(index, scheme) {
+							setTimeout(function() {
+								window.location.href = scheme;
+							}, index * 200);
+						});
+						// 最终跳转网页版
+						setTimeout(function() {
+							if (!document.hidden) {
+								window.location.href = tiktokWebUrl;
+							}
+						}, tiktokUrls.length * 200 + 200);
+					}
+				}, 800);
+			} else {
+				window.open(tiktokWebUrl, "_blank");
+			}
+		}, 500);
 	}
 });
 
